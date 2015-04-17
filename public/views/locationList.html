@@ -1,0 +1,86 @@
+
+	<div class="row">
+		<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+			<h4 class="loc-list-header">Country</h4>
+		</div>
+		<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+			<h4 class="loc-list-header">State</h4>
+		</div>
+		<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+			<h4 class="loc-list-header">City</h4>
+		</div>
+		<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+			<h4 class="loc-list-header"> Street Name</h4> 
+		</div>
+		<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+			<h4 class="loc-list-header">Street Num</h4> 
+		</div>
+		<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+			<h4 class="loc-list-header">Room Num</h4> 
+		</div>
+	</div>
+
+
+<div ng-repeat="location in locations" class="row loc-entry" ng-click="viewLocation(location.location_id)">	
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.country_name"></div>
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.state_name"></div>
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.city_name"></div>
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.street_name"></div>
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.street_number"></div>
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.room_number"></div>
+</div>
+<div class="row" style="margin-top:10px;">	
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="inputLocation.country_name"></div>
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="inputLocation.state_name"></div>
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="inputLocation.city_name"></div>
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="inputLocation.street_name"></div>
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="inputLocation.street_number"></div>
+	<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="inputLocation.room_number"></div>
+</div>
+<form ng-submit="createLocation(inputLocation)">	
+	<div class="row" style="margin-top:10px;">
+		<div class="form-group col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-input-row">
+	    <input type="text"
+	    required
+	    class="form-control"
+	    placeholder="Country Name"
+	    ng-model="inputLocation.country_name"></input>
+	  </div>
+	  <div class="form-group col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-input-row">
+	    <input type="text"
+	    class="form-control"
+	    placeholder="State Name"
+	    ng-model="inputLocation.state_name"></input>
+	  </div>
+	  <div class="form-group col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-input-row">
+	    <input type="text"
+	    class="form-control"
+	    placeholder="City Name"
+	    ng-model="inputLocation.city_name"></input>
+	  </div>
+	  <div class="form-group col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-input-row">
+	    <input type="text"
+	    class="form-control"
+	    placeholder="Street Name"
+	    ng-model="inputLocation.street_name"></input>
+	  </div>
+	  <div class="form-group col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-input-row">
+	    <input type="text"
+	    class="form-control"
+	    placeholder="Street Num"
+	    ng-model="inputLocation.street_number"></input>
+	  </div>
+	  <div class="form-group col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-input-row">
+	    <input type="text"
+	    class="form-control"
+	    placeholder="Room Num"
+	    ng-model="inputLocation.room_number"></input>
+	  </div>
+	</div>
+    <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px; height:40px;">Create</button>
+</form>
+
+
+<div ng-if="error" style="margin-top:15px;">
+	<p style="color:red" ng-bind="error.message"></p>
+</div>

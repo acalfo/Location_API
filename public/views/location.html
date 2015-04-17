@@ -1,0 +1,86 @@
+<div ng-show="error" class="alert alert-danger row">
+  <span ng-bind="error.message"></span>
+</div>
+
+<form ng-submit="update(location)"
+  style="margin-top:10px;">
+  <div class="row">
+    <div class="col-md-3" 
+    style="float:left;text-align:left!important;">
+      <a class="btn btn-success" 
+        ng-click="goHome()"
+        style="width:100%;">
+        <span class="glyphicon glyphicon-arrow-left"></span>   Back
+      </a>
+    </div>
+    <div class="col-md-6">
+      <p style="font-size:28px;"><b>Location Information</b></h3>
+    </div>
+    <div class="col-md-3" 
+    style="float:right;text-align:right!important;">
+      <a class="btn btn-info" 
+        ng-click="viewAncestors(location.location_id)"
+        style="width:100%;">
+        Ancestors   <span class="glyphicon glyphicon-arrow-right"></span> 
+      </a>
+    </div>
+  </div>
+  <div ng-if="location.coordinates" class="row">
+    <p>( <span ng-bind="location.coordinates.lat"></span> , 
+         <span ng-bind="location.coordinates.lng"></span> )
+  </div>
+  <div class="form-group">
+  	<label>Country: </label>
+    <input type="text"
+    required
+    class="form-control"
+    placeholder="Country Name"
+    ng-model="location.country_name"></input>
+  </div>
+  <div class="form-group">
+  	<label>State: </label>
+    <input type="text"
+    class="form-control"
+    placeholder="State Name"
+    ng-model="location.state_name"></input>
+  </div>
+  <div class="form-group">
+  	<label>City: </label>
+    <input type="text"
+    class="form-control"
+    placeholder="City Name"
+    ng-model="location.city_name"></input>
+  </div>
+  <div class="form-group">
+  	<label>Street Address: </label>
+    <input type="text"
+    class="form-control"
+    placeholder="Street Name"
+    ng-model="location.street_name"></input>
+  </div>
+  <div class="form-group">
+    <label>Street Number: </label>
+    <input type="text"
+    class="form-control"
+    placeholder="Street Number"
+    ng-model="location.street_number"></input>
+  </div>
+  <div class="form-group">
+    <label>Room Number: </label>
+    <input type="text"
+    class="form-control"
+    placeholder="Room Numbers"
+    ng-model="location.room_number"></input>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+      <button ng-click="delete(location.location_id)" 
+      class="btn btn-warning"
+      style="width:100%;">Delete</button>
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+      <button type="submit" 
+      class="btn btn-primary"
+      style="width:100%;">Update</button>
+    </div>
+</form>

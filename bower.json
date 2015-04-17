@@ -1,0 +1,10 @@
+{
+  "name": "location-api",
+  "description": "A user based location api",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x"
+  }
+}

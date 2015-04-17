@@ -1,0 +1,61 @@
+<div ng-show="error" class="alert alert-danger row">
+  <span ng-bind="error.message"></span>
+</div>
+<div class="row">
+  <div class="col-md-3" 
+  style="float:left;text-align:left!important;">
+    <button class="btn btn-success" 
+      ng-click="back(location.location_id)"
+      style="width:100%;">
+      <span class="glyphicon glyphicon-arrow-left"></span>   Back
+    </button>
+  </div>
+  <div class="col-md-6">
+    <p style="font-size:28px;"><b>Current Location entry</b></p>
+  </div>
+  <div class="col-md-3" 
+    style="float:right;text-align:right!important;">
+      <button class="btn btn-info" 
+        ng-click="getCommonAncestor(location.location_id)"
+        style="width:100%;">
+        Common Ancestor   <span class="glyphicon glyphicon-arrow-right"></span> 
+      </button>
+    </div>
+</div>
+
+<div class="row" style="margin-top:20px;"> 
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.country_name"></div>
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.state_name"></div>
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.city_name"></div>
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.street_name"></div>
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.street_number"></div>
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.room_number"></div>
+</div>
+
+
+<div class="row" style="margin-top:20px;">
+  <h3>
+    All Ancestors
+  </h3>
+</div>
+
+  <div ng-repeat="location in ancestors" class="row" style="margin-top:10px;"> 
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.country_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.state_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.city_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.street_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.street_number"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.room_number"></div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+

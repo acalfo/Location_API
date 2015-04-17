@@ -1,0 +1,55 @@
+<div ng-show="error" class="alert alert-danger row">
+  <span ng-bind="error.message"></span>
+</div>
+<div class="row">
+  <div class="col-md-3" 
+  style="float:left;text-align:left!important;">
+    <button class="btn btn-success" 
+      ng-click="back(location.location_id)"
+      style="width:100%;">
+      <span class="glyphicon glyphicon-arrow-left"></span>   Back
+    </button>
+  </div>
+  <div class="col-md-6">
+    <p style="font-size:28px;"><b>Common Ancestor</b></p>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
+<div class="row" ng-if="commonAncestor" style="margin-top:15px;">
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonAncestor.country_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonAncestor.state_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonAncestor.city_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonAncestor.street_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonAncestor.street_number"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonAncestor.room_number"></div>
+</div>
+<div class="row" style="margin-top:30px;">
+  <div style="col-md-12; font-size:18px;">
+    <p><b>Current Children</b></p>
+  </div>
+</div>
+<div class="row" ng-repeat="commonLocation in children" style="margin-top:10px;"> 
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonLocation.country_name"></div>
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonLocation.state_name"></div>
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonLocation.city_name"></div>
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonLocation.street_name"></div>
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonLocation.street_number"></div>
+  <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="commonLocation.room_number"></div>
+</div>
+<div class="row" style="margin-top:30px;">
+  <div style="col-md-12; font-size:16px;">
+    <p>Click one to view the Common Ancestor</p>
+  </div>
+</div>
+<div ng-repeat="location in locations" 
+  class="row loc-entry" 
+  style="margin-top:5px;" 
+  ng-click="getCommonAncestor(location)"> 
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.country_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.state_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.city_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.street_name"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.street_number"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 loc-entry-cel" ng-bind="location.room_number"></div>
+</div>
