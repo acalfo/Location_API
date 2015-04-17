@@ -12,10 +12,20 @@ class CreateLocationTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('location', function(Blueprint $table)
-		{
-			//
-		});
+		Schema::create('location', function(Blueprint $table)
+	    {
+	        $table->increments('location_id');
+	        $table->integer('user_id');
+	        $table->string('country_name');
+	        $table->string('state_name');
+	        $table->string('city_name');
+	        $table->string('street_name');
+	        $table->string('street_number');
+	        $table->string('room_number');
+	    	$table->integer('level');
+	    	$table->integer('parent');
+	    	$table->timestamps();
+	    });
 	}
 
 	/**
