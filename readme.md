@@ -119,8 +119,7 @@ DELETE url : /api/v1/locations/{location_id},
 			returns error data object 
 
 TESTING 
-	Already pretty late on the project (FRIDAY) and havn't had a chance to do unit testing.
-	Planning on turning in like this and do testing over weekend if needed
+	Havn't completed PHP unit testing
 
 	TESTING W/ CURL EXAMPLE:
 	CREATE
