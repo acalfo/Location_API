@@ -92,7 +92,7 @@ GET COMMON ANCESTOR
 		url : /api/v1/location/{location_id}
 			method: GET
 			params: 
-				1:  "ancestor" = "all"
+				1:  "ancestor" = "common"
 				2: "id" = location2_id
 
 			param.2 = the 2nd location to find the common ancestor for
